@@ -1,0 +1,27 @@
+{
+  "ids": {
+    "Todo": 9,
+    "TodoList": 3,
+    "User": 4
+  },
+  "models": {
+    "Todo": {
+      "1": "{\"task\":\"Take over the galaxy\",\"description\":\"MWAHAHAHAHAHAHAHAHAHAHAHAHAMWAHAHAHAHAHAHAHAHAHAHAHAHA\",\"id\":1,\"status\":\"todo\",\"todoListId\":2}",
+      "2": "{\"task\":\"destroy alderaan\",\"description\":\"Make sure there are no survivors left!\",\"id\":2,\"status\":\"todo\",\"todoListId\":2}",
+      "3": "{\"task\":\"play space invaders\",\"description\":\"Become the very best!\",\"id\":3,\"status\":\"todo\",\"todoListId\":2}",
+      "4": "{\"task\":\"crush rebel scum\",\"description\":\"Every.Last.One.\",\"id\":4,\"status\":\"todo\",\"todoListId\":2}",
+      "5": "{\"task\":\"build source\",\"description\":\"follow tutorial\",\"status\":\"todo\",\"id\":5,\"todoListId\":2}",
+      "6": "{\"task\":\"build source\",\"description\":\"follow tutorial\",\"status\":\"todo\",\"id\":6,\"todoListId\":2}",
+      "7": "{\"task\":\"string\",\"description\":\"string\",\"status\":\"string\",\"id\":7,\"todoListId\":2}",
+      "8": "{\"task\":\"string\",\"description\":\"string\",\"status\":\"string\",\"id\":8,\"todoListId\":2}"
+    },
+    "TodoList": {
+      "1": "{\"title\":\"Sith lord's check list\",\"color\":\"blue\",\"id\":1}",
+      "2": "{\"title\":\"My daily chores\",\"color\":\"red\",\"id\":2}"
+    },
+    "User": {
+      "1": "{\"id\":\"1\",\"username\":\"thanghoian123\",\"password\":\"123456a@\",\"role\":\"admin\"}",
+      "3": "{\"username\":\"test2\",\"password\":\"string\",\"role\":\"user\",\"id\":3}"
+    }
+  }
+}
