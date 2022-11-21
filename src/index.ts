@@ -30,6 +30,10 @@ if (require.main === module) {
         // useful when used with OpenAPI-to-GraphQL to locate your application
         setServersFromRequest: true,
       },
+      endpointMapping: {
+        '/openapi.json': {version: '3.0.0', format: 'json'},
+        '/openapi.yaml': {version: '3.0.0', format: 'yaml'},
+      },
     },
   };
   main(config).catch(err => {
