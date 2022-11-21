@@ -4,18 +4,18 @@ import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
 import {
   RestExplorerBindings,
-  RestExplorerComponent,
+  RestExplorerComponent
 } from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
 // -------------------
-import {AuthenticationComponent} from '@loopback/authentication';
+import {AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
 import {
-  JWTAuthenticationComponent,
-  UserServiceBindings,
+  JWTAuthenticationComponent
 } from '@loopback/authentication-jwt';
-import {DbDataSource} from './datasources';
+import {JWTStrategy} from "./authentication-stategies/jwt-strategy";
+
 // -------------------
 
 export {ApplicationConfig};
@@ -31,6 +31,9 @@ export class TestApplication extends BootMixin(
 
     // Set up default home page
     this.static('/', path.join(__dirname, '../public'));
+
+    this.component(AuthenticationComponent);
+    registerAuthenticationStrategy(this, JWTStrategy);
 
     // Customize @loopback/rest-explorer configuration here
     this.configure(RestExplorerBindings.COMPONENT).to({
@@ -54,8 +57,6 @@ export class TestApplication extends BootMixin(
     this.component(AuthenticationComponent);
     // Mount jwt component
     this.component(JWTAuthenticationComponent);
-    // Bind datasource
-    this.dataSource(DbDataSource, UserServiceBindings.DATASOURCE_NAME);
     // ------------- END OF SNIPPET -------------
   }
 }

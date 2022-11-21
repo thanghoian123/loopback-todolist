@@ -4,7 +4,7 @@ import {
   AuthenticateFn,
   AuthenticationBindings,
   AUTHENTICATION_STRATEGY_NOT_FOUND,
-  USER_PROFILE_NOT_FOUND,
+  USER_PROFILE_NOT_FOUND
 } from '@loopback/authentication';
 import {inject} from '@loopback/core';
 import {
@@ -14,7 +14,7 @@ import {
   Reject,
   RequestContext,
   Send,
-  SequenceActions,
+  SequenceActions
 } from '@loopback/rest';
 import {SequenceHandler} from '@loopback/rest/dist/sequence';
 // ------------------------------------
@@ -31,6 +31,7 @@ export class MySequence implements SequenceHandler {
   async handle(context: RequestContext) {
     try {
       const {request, response} = context;
+      console.log("🚀 ~ file: sequence.ts ~ line 34 ~ MySequence ~ handle ~ request", request)
       const route = this.findRoute(request);
       // - enable jwt auth -
       // call authentication action

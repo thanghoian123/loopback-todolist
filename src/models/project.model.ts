@@ -1,12 +1,12 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class UserCustom extends Entity {
+export class Project extends Entity {
   @property({
     type: 'string',
     required: true,
   })
-  role: string;
+  name: string;
 
   @property({
     type: 'number',
@@ -15,14 +15,17 @@ export class UserCustom extends Entity {
   })
   ID?: number;
 
+  // @hasMany(() => User, {through: {model: () => UserProject}})
+  // users: User[];
 
-  constructor(data?: Partial<UserCustom>) {
+
+  constructor(data?: Partial<Project>) {
     super(data);
   }
 }
 
-export interface UserCustomRelations {
+export interface ProjectRelations {
   // describe navigational properties here
 }
 
-export type UserCustomWithRelations = UserCustom & UserCustomRelations;
+export type ProjectWithRelations = Project & ProjectRelations;

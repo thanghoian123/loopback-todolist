@@ -1,0 +1,38 @@
+@startuml
+skinparam shadowing false
+
+entity "User" as u {
+  *id
+  —
+  name
+  role
+}
+
+
+
+
+entity "project" as p {
+  *id
+  --
+  *post_id
+  *author_id <<FK>>
+
+}
+
+entity "todo" as td {
+  *id
+  --
+  *author_id <<FK>>
+  title
+  content
+  status
+}
+
+' Authors can join as many projects
+u  }o..o{ p
+
+' A project can have many todo
+p ||--o{ td
+
+
+@enduml
